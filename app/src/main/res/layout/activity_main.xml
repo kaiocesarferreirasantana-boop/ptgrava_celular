@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="22dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PT Gravador"
+            android:textColor="@color/text"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gravação de tela 1080×1920 (9:16) • sem anúncios"
+            android:textColor="@color/muted"
+            android:textSize="14sp" />
+
+        <TextView style="@style/Label" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:text="Enquadramento 9:16" />
+        <RadioGroup android:id="@+id/rgMode" android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <RadioButton android:id="@+id/modeFill" style="@style/Opt"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:text="Preencher (corta um pouco do topo e da base)" />
+            <RadioButton android:id="@+id/modeFit" style="@style/Opt"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:text="Ajustar (tela inteira, com faixas pretas nas laterais)" />
+        </RadioGroup>
+
+        <TextView style="@style/Label" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:text="Quadros por segundo" />
+        <RadioGroup android:id="@+id/rgFps" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:orientation="horizontal">
+            <RadioButton android:id="@+id/fps30" style="@style/Opt"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_marginEnd="24dp" android:text="30 fps" />
+            <RadioButton android:id="@+id/fps60" style="@style/Opt"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="60 fps" />
+        </RadioGroup>
+
+        <TextView style="@style/Label" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:text="Qualidade (bitrate)" />
+        <RadioGroup android:id="@+id/rgBitrate" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:orientation="horizontal">
+            <RadioButton android:id="@+id/br8" style="@style/Opt"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp" android:text="8 Mbps" />
+            <RadioButton android:id="@+id/br12" style="@style/Opt"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp" android:text="12 Mbps" />
+            <RadioButton android:id="@+id/br20" style="@style/Opt"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="20 Mbps" />
+        </RadioGroup>
+
+        <TextView style="@style/Label" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:text="Opções" />
+        <CheckBox android:id="@+id/cbMic" style="@style/Opt"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="Gravar áudio do microfone (narração)" />
+        <CheckBox android:id="@+id/cbCountdown" style="@style/Opt"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="Contagem de 3 segundos antes de começar" />
+        <CheckBox android:id="@+id/cbMinimize" style="@style/Opt"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="Minimizar o app ao iniciar" />
+
+        <Button
+            android:id="@+id/btnRec"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:layout_marginTop="28dp"
+            android:background="@drawable/btn_rec"
+            android:text="● GRAVAR"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:gravity="center"
+            android:textColor="@color/muted"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:text="Para parar: toque em PARAR na notificação, no chip vermelho da barra de status ou volte aqui. Os vídeos ficam em Filmes/PT Gravador (aparecem na Galeria)."
+            android:textColor="@color/muted"
+            android:textSize="12sp" />
+    </LinearLayout>
+</ScrollView>
