@@ -3,7 +3,7 @@ name: Gerar APK
 on:
   push:
     branches: [ main, master ]
-  workflow_dispatch:   # botão "Run workflow" na aba Actions
+  workflow_dispatch:
 
 jobs:
   build:
@@ -16,7 +16,11 @@ jobs:
           distribution: temurin
           java-version: '17'
 
-      - uses: android-actions/setup-android@v3
+      - name: Aceitar licenças do Android SDK
+        run: |
+          SDKM=$(ls -d "$ANDROID_HOME"/cmdline-tools/*/bin/sdkmanager | sort -V | tail -1)
+          echo "Usando $SDKM"
+          yes | "$SDKM" --licenses > /dev/null || true
 
       - uses: gradle/actions/setup-gradle@v4
         with:
